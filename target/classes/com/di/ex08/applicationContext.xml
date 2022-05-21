@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<bean id="empA" class="com.di.ex08.Emp">
+			<constructor-arg value="사원A"/>
+			<constructor-arg value="2000000"/>
+		</bean>
+		<bean id="developerA" class="com.di.ex08.Developer">
+			<constructor-arg ref="empA"/>
+			<constructor-arg value="개발팀"/>
+		</bean>
+
+		<bean id="empB" class="com.di.ex08.Emp">
+			<constructor-arg value="사원B"/>
+			<constructor-arg value="3000000"/>
+		</bean>
+		<bean id="engineerB" class="com.di.ex08.Engineer">
+			<constructor-arg ref="empB"/>
+			<constructor-arg value="기술팀"/>
+		</bean>
+</beans>

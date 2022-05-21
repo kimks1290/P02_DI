@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Foo FooA = new Foo(); -->
+	<bean id="foo0" class="com.di.ex02.Foo"></bean>
+	
+	<!-- Foo FooB = new Foo("fooB"); -->
+	<bean id="fooB" class="com.di.ex02.Foo">
+		<constructor-arg value="fooB"></constructor-arg> <!-- 값을 넘기는 태그  | value-->
+	</bean>
+	
+	<!-- Foo FooC = new Foo(1000, "fooC"); -->
+	<bean id="fooC" class="com.di.ex02.Foo">
+		<constructor-arg index="0">
+			<value>1000</value>
+		</constructor-arg>		
+		<constructor-arg index="1" value="fooC"/> <!-- 값을 넘기는 태그 -->
+	</bean>
+	
+	<!-- Foo FooD = new Foo(1000, "fooD", true); | 이것과 아래가 동일-->
+	<bean id="fooD" class="com.di.ex02.Foo">
+		<constructor-arg value="2000"/>		
+		<constructor-arg value="fooD"/>		
+		<constructor-arg value="true"/>		
+	</bean>
+	
+	<!-- Foo fooD = new Foo(Bar bar;) -->
+	<bean id="fooE" class="com.di.ex02.Foo">
+		<constructor-arg>		
+			<ref bean ="bar"/>
+		</constructor-arg>		
+	</bean>
+	
+	<bean id="bar"  class="com.di.ex02.Bar"></bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
