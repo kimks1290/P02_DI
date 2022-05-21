@@ -15,7 +15,7 @@ public class TestMain {
 		MessageBean bean = (MessageBean)context.getBean("messageBean");
 		
 		bean.sayHello();
-		
+		bean.sayHello();
 		context.close();
 	}
 	
